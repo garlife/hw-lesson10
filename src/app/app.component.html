@@ -1,0 +1,81 @@
+
+  <!-- <div name="simpleLinks">
+    <table>
+      <tr>
+        <th>Меню ссылками:</th>
+        <td><a href="/about">Обо мне</a></td>
+        <td><a href="/project">О проекте</a></td>
+        <td><a href="/">На главную</a></td>
+      </tr>
+    </table>
+  </div> -->
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" routerLink="">Bootstrap Menu</a>
+  <button class="navbar-toggler" type="button" (click)="toggleNavbar()" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+   <span class="navbar-toggler-icon"></span>
+  </button>
+ 
+  <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
+   <ul class="navbar-nav mr-auto">
+    <li class="nav-item active">
+     <a class="nav-link" routerLink="" routerLinkActive="active">Главная <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="nav-item">
+     <a class="nav-link" routerLink="about" routerLinkActive="active">Обо мне</a>
+    </li>
+    <li class="nav-item">
+     <a class="nav-link" routerLink="project" routerLinkActive="active">О проекте</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="goBack()" routerLinkActive="active">Назад</a>
+     </li>
+    <!-- <li class="nav-item">
+     <a class="nav-link" routerLink="terms" routerLinkActive="active">Terms and Conditions</a>
+    </li> -->
+   </ul>
+  </div>
+ </nav>
+ <div name="buttons_routerLink">
+  <table>
+    <tr>
+      <th>Меню кнопками:</th>
+      <td><button type="menu" [routerLink]="['about']">Обо мне</button></td>
+      <td>
+        <button type="menu" [routerLink]="['project']">О проекте</button>
+      </td>
+      <td>
+        <button type="menu" [routerLink]="['']">На главную</button>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div name="buttons_event_navigate">
+  <table>
+    <tr>
+      <th>Меню кнопками c навигацией через события:</th>
+      <td>
+        <button type="menu" (click)="goToMain()">Сюда</button>
+      </td>
+      <td><button type="menu" (click)="goToAbout()">Обо мне</button></td>
+      <td>
+        <button type="menu" (click)="goToProject()">О проекте</button>
+      </td>
+      <td>
+        <button type="menu" (click)="goToMain()">На главную</button>
+      </td>
+      <td>
+        <button type="menu" (click)="goBack()">Туда</button>
+      </td>
+    </tr>
+  </table>
+</div>
+ 
+ 
+ <div class="container">
+  <router-outlet></router-outlet>
+ </div>
+
+
