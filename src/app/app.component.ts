@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { Location } from "@angular/common"
 
 @Component({
   selector: 'app-root',
@@ -16,14 +17,24 @@ export class AppComponent {
   }
   
 
-  constructor(public router: Router) {
-    //как получить историю
-    this.router.events
-    .pipe(filter((event) => event instanceof NavigationEnd))
-    .subscribe(async ({ urlAfterRedirects }: NavigationEnd) => {
+  constructor(public router: Router, private location: Location) {
+    // как получить историю
+    this.router.events.pipe(filter((event) => event instanceof NavigationEnd)).subscribe(async ({ urlAfterRedirects }: NavigationEnd) => {
       console.log(urlAfterRedirects);
     });
   }
+
+  
+    // navigateTo(url) {
+    //     this.location.go(url);
+    // }    
+    goBack() {
+        this.location.back();
+    }
+    goForward() {
+        this.location.forward();
+    }
+
 
   goToAbout() {
     this.router.navigate(['about']);
@@ -35,7 +46,5 @@ export class AppComponent {
     this.router.navigate(['']);
   }
 
-  goBack(){
-   
-  }
+ 
 }

@@ -8,7 +8,10 @@ import { Page404Component } from './page404/page404.component';
 const routes: Routes = [
   {
     path: '',
-    component: MainPageComponent
+    component: MainPageComponent,
+    // loadChildren: './main-page/main-page.module.ts#MainPageComponent',
+
+    pathMatch: 'full',
   },
   {
   path: 'about',
@@ -29,7 +32,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { enableTracing: true })],
+  imports: [RouterModule.forRoot(routes)],
+  // imports: [RouterModule.forRoot(routes, { enableTracing: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
