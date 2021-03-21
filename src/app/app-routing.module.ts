@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutMeComponent } from './about-me/about-me.component';
+import { GitIssuesComponent } from './git-issues/git-issues.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { MaterialsComponent } from './materials/materials.component';
 import { MyProjectComponent } from './my-project/my-project.component';
 import { Page404Component } from './page404/page404.component';
+import { TableComponent } from './table/table.component';
 
 const routes: Routes = [
   {
@@ -24,6 +26,14 @@ const routes: Routes = [
 {
   path: 'links',
   component: MaterialsComponent
+},
+{
+  path: 'issues',
+  component: GitIssuesComponent
+},
+{
+  path: 'table',
+  component: TableComponent
 },
 {
   path: '404',
