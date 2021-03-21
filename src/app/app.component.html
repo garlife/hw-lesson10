@@ -67,6 +67,11 @@
         >
       </li>
       <li class="nav-item">
+        <a class="nav-link" routerLink="links" routerLinkActive="active"
+          >Полезные ссылки</a
+        >
+      </li>
+      <li class="nav-item">
         <a class="nav-link" (click)="goForward()" routerLinkActive="active">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -86,7 +91,7 @@
   </div>
 </nav>
 
-<div name="buttons_event_navigate">
+<!-- <div name="buttons_event_navigate">
   <table>
     <tr>
       <th>Меню кнопками:</th>
@@ -109,7 +114,7 @@
       </td>
     </tr>
   </table>
-</div>
+</div> -->
 
 <div class="container">
   <router-outlet></router-outlet>
